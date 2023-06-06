@@ -58,8 +58,21 @@ def checkRow(board):
                 return True
             
 
-def checkDiag(board):
-    pass
+def checkDiagLeft(board):
+    diagonals = [[] for i in range(n + n - 1)]
+    for i in range(-(n - 1), n):
+        for j in range(n):
+            row, col = j, i + j
+            if 0 <= row < len(board) and 0 <= col < len(board[0]):
+                diagonals[i + len(board) - 1].append(board[row][col])
+
+
+#доделать
+def checkDiagRight(board):
+'''    matrix = [1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]
+for q in matrix:
+    q.reverse()
+print(matrix)'''
 
 
 def checkTie(board):
